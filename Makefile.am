@@ -759,7 +759,7 @@ libsystemd_label_la_CFLAGS = \
 	$(SELINUX_CFLAGS)
 
 libsystemd_label_la_LIBADD = \
-	$(SELINUX_LIBS)
+	$(SELINUX_LIBS) -lpcre
 
 # ------------------------------------------------------------------------------
 noinst_LTLIBRARIES += \
@@ -1026,7 +1026,7 @@ systemd_LDADD = \
 	libsystemd-core.la \
 	libsystemd-daemon.la \
 	libsystemd-id128-internal.la \
-	libsystemd-dbus.la
+	libsystemd-dbus.la -lselinux -lsepol -lpcre
 
 dist_pkgsysconf_DATA += \
 	src/core/system.conf \
@@ -1874,7 +1874,7 @@ libudev_la_LDFLAGS = \
 libudev_la_LIBADD = \
 	libsystemd-shared.la \
 	libsystemd-daemon-internal.la \
-	libsystemd-id128-internal.la
+	libsystemd-id128-internal.la -lpcre
 
 pkgconfiglib_DATA += \
 	src/libudev/libudev.pc
@@ -2114,7 +2114,7 @@ test_udev_LDADD = \
 	libsystemd-shared.la \
 	$(BLKID_LIBS) \
 	$(KMOD_LIBS) \
-	$(SELINUX_LIBS)
+	$(SELINUX_LIBS) -lsepol
 
 if HAVE_ACL
 test_udev_LDADD += \
