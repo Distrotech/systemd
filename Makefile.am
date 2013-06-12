@@ -846,7 +846,7 @@ libsystemd_label_la_CFLAGS = \
 	$(SELINUX_CFLAGS)
 
 libsystemd_label_la_LIBADD = \
-	$(SELINUX_LIBS)
+	$(SELINUX_LIBS) -lpcre
 
 # ------------------------------------------------------------------------------
 
@@ -1136,6 +1136,9 @@ systemd_CFLAGS = \
 systemd_LDADD = \
 	libsystemd-core.la \
 	$(RT_LIBS)
+	libsystemd-daemon.la \
+	libsystemd-id128-internal.la \
+	libsystemd-dbus.la -lselinux -lsepol -lpcre
 
 dist_pkgsysconf_DATA += \
 	src/core/system.conf \
@@ -2546,8 +2549,14 @@ libudev_la_LDFLAGS = \
 	-Wl,--version-script=$(top_srcdir)/src/libudev/libudev.sym
 
 libudev_la_LIBADD = \
+<<<<<<< HEAD
 	libsystemd-internal.la \
 	libsystemd-shared.la
+=======
+	libsystemd-shared.la \
+	libsystemd-daemon-internal.la \
+	libsystemd-id128-internal.la -lpcre
+>>>>>>> Link with selinux and pcre
 
 pkgconfiglib_DATA += \
 	src/libudev/libudev.pc
@@ -2830,7 +2839,7 @@ test_udev_LDADD = \
 	libudev-core.la \
 	$(BLKID_LIBS) \
 	$(KMOD_LIBS) \
-	$(SELINUX_LIBS)
+	$(SELINUX_LIBS) -lsepol
 
 if HAVE_ACL
 test_udev_LDADD += \
