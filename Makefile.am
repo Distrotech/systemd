@@ -1135,7 +1135,7 @@ systemd_CFLAGS = \
 
 systemd_LDADD = \
 	libsystemd-core.la \
-	$(RT_LIBS)
+	$(RT_LIBS) \
 	libsystemd-daemon.la \
 	libsystemd-id128-internal.la \
 	libsystemd-dbus.la -lselinux -lsepol -lpcre
