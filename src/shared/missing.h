@@ -275,7 +275,7 @@ static inline pid_t gettid(void) {
 #    define __NR_name_to_handle_at 345
 #  endif
 #else
-#  if !defined(__NR_name_to_handle_at) && HAVE_DECL_NAME_TO_HANDLE_AT
+#  if !defined(__NR_name_to_handle_at) && !HAVE_DECL_NAME_TO_HANDLE_AT
 #    error __NR_name_to_handle_at is not defined
 #  endif
 #endif
