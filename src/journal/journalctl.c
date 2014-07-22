@@ -1040,7 +1040,11 @@ static int setup_keys(void) {
         if (ioctl(fd, FS_IOC_GETFLAGS, &attr) < 0)
                 log_warning("FS_IOC_GETFLAGS failed: %m");
 
+#ifdef FS_NOCOW_FL
         attr |= FS_SECRM_FL|FS_NODUMP_FL|FS_SYNC_FL|FS_NOCOW_FL;
+#else
+        attr |= FS_SECRM_FL|FS_NODUMP_FL|FS_SYNC_FL;
+#endif
 
         if (ioctl(fd, FS_IOC_SETFLAGS, &attr) < 0)
                 log_warning("FS_IOC_SETFLAGS failed: %m");

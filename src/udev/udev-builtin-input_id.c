@@ -28,6 +28,10 @@
 #include <linux/limits.h>
 #include <linux/input.h>
 
+#ifndef BTN_TRIGGER_HAPPY
+#define BTN_TRIGGER_HAPPY 0x2c0
+#endif
+
 #include "udev.h"
 
 /* we must use this kernel-compatible implementation */
