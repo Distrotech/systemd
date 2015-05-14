@@ -6,8 +6,17 @@
 /* Canonical host string. */
 #undef CANONICAL_HOST
 
+/* Default index URL to use for image downloads */
+#undef DEFAULT_DKR_INDEX_URL
+
 /* Default DNS Servers */
 #undef DNS_SERVERS
+
+/* Define if hashmap debugging is to be enabled */
+#undef ENABLE_DEBUG_HASHMAP
+
+/* Define if mmap cache debugging is to be enabled */
+#undef ENABLE_DEBUG_MMAP_CACHE
 
 /* Define if EFI support is to be enabled */
 #undef ENABLE_EFI
@@ -42,11 +51,21 @@
 /* Define if blkid is available */
 #undef HAVE_BLKID
 
+/* Define in BZIP2 is available */
+#undef HAVE_BZIP2
+
+/* Define to 1 if you have the <bzlib.h> header file. */
+#undef HAVE_BZLIB_H
+
 /* Define if CHKCONFIG is available */
 #undef HAVE_CHKCONFIG
 
 /* Define if dbus-1 library is available */
 #undef HAVE_DBUS
+
+/* Define to 1 if you have the declaration of `getrandom', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETRANDOM
 
 /* Define to 1 if you have the declaration of `gettid', and to 0 if you don't.
    */
@@ -60,9 +79,21 @@
    0 if you don't. */
 #undef HAVE_DECL_IFLA_BRIDGE_VLAN_INFO
 
+/* Define to 1 if you have the declaration of `IFLA_BRPORT_UNICAST_FLOOD', and
+   to 0 if you don't. */
+#undef HAVE_DECL_IFLA_BRPORT_UNICAST_FLOOD
+
+/* Define to 1 if you have the declaration of `IFLA_INET6_ADDR_GEN_MODE', and
+   to 0 if you don't. */
+#undef HAVE_DECL_IFLA_INET6_ADDR_GEN_MODE
+
 /* Define to 1 if you have the declaration of
    `IFLA_IPTUN_6RD_RELAY_PREFIXLEN', and to 0 if you don't. */
 #undef HAVE_DECL_IFLA_IPTUN_6RD_RELAY_PREFIXLEN
+
+/* Define to 1 if you have the declaration of `IFLA_IPVLAN_MODE', and to 0 if
+   you don't. */
+#undef HAVE_DECL_IFLA_IPVLAN_MODE
 
 /* Define to 1 if you have the declaration of `IFLA_MACVLAN_FLAGS', and to 0
    if you don't. */
@@ -84,6 +115,10 @@
    you don't. */
 #undef HAVE_DECL_IFLA_VXLAN_LOCAL6
 
+/* Define to 1 if you have the declaration of `kcmp', and to 0 if you don't.
+   */
+#undef HAVE_DECL_KCMP
+
 /* Define to 1 if you have the declaration of `LO_FLAGS_PARTSCAN', and to 0 if
    you don't. */
 #undef HAVE_DECL_LO_FLAGS_PARTSCAN
@@ -95,6 +130,10 @@
 /* Define to 1 if you have the declaration of `pivot_root', and to 0 if you
    don't. */
 #undef HAVE_DECL_PIVOT_ROOT
+
+/* Define to 1 if you have the declaration of `renameat2', and to 0 if you
+   don't. */
+#undef HAVE_DECL_RENAMEAT2
 
 /* Define to 1 if you have the declaration of `setns', and to 0 if you don't.
    */
@@ -109,17 +148,8 @@
 /* Define to 1 if you have the <elfutils/libdwfl.h> header file. */
 #undef HAVE_ELFUTILS_LIBDWFL_H
 
-/* Define to 1 if you have the `fanotify_init' function. */
-#undef HAVE_FANOTIFY_INIT
-
-/* Define to 1 if you have the `fanotify_mark' function. */
-#undef HAVE_FANOTIFY_MARK
-
 /* Define to 1 if you have the <fcntl.h> header file. */
 #undef HAVE_FCNTL_H
-
-/* Define if FIRMWARE is available */
-#undef HAVE_FIRMWARE
 
 /* GCRYPT available */
 #undef HAVE_GCRYPT
@@ -141,6 +171,9 @@
 
 /* Define if IMA is available */
 #undef HAVE_IMA
+
+/* Importd support available */
+#undef HAVE_IMPORTD
 
 /* Define to 1 if you have the `inet_ntoa' function. */
 #undef HAVE_INET_NTOA
@@ -166,8 +199,17 @@
 /* Define if libidn is available */
 #undef HAVE_LIBIDN
 
+/* Define if libiptc is available */
+#undef HAVE_LIBIPTC
+
+/* Define if libmount is available */
+#undef HAVE_LIBMOUNT
+
 /* Define to 1 if you have the <linux/btrfs.h> header file. */
 #undef HAVE_LINUX_BTRFS_H
+
+/* Define to 1 if you have the <linux/memfd.h> header file. */
+#undef HAVE_LINUX_MEMFD_H
 
 /* Logind support available */
 #undef HAVE_LOGIND
@@ -184,6 +226,9 @@
 /* Define to 1 if your system has a GNU libc compatible `malloc' function, and
    to 0 otherwise. */
 #undef HAVE_MALLOC
+
+/* Define to 1 if you have the `memfd_create' function. */
+#undef HAVE_MEMFD_CREATE
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -302,14 +347,23 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
+/* Define if utmp/wtmp support is enabled */
+#undef HAVE_UTMP
+
 /* Define to 1 if you have the <valgrind/memcheck.h> header file. */
 #undef HAVE_VALGRIND_MEMCHECK_H
 
 /* Define to 1 if you have the <valgrind/valgrind.h> header file. */
 #undef HAVE_VALGRIND_VALGRIND_H
 
+/* Define if libxkbcommon is available */
+#undef HAVE_XKBCOMMON
+
 /* Define if XZ is available */
 #undef HAVE_XZ
+
+/* Define if ZLIB is available */
+#undef HAVE_ZLIB
 
 /* Define to 1 if you have the `__secure_getenv' function. */
 #undef HAVE___SECURE_GETENV
